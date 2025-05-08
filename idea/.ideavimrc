@@ -1,0 +1,15 @@
+vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
+
+nnoremap <SPACE> <Nop>
+let mapleader = " "
+map <Space> <Leader>
+
+nnoremap <leader>d "_d
+xnoremap <leader>d "_d
+xnoremap <leader>p "_dP
+
+nnoremap <C-L><C-L> :set invrelativenumber<CR>
+set ideajoin
+
+set number
+set relativenumber

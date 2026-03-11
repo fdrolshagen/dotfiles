@@ -1,7 +1,12 @@
+tap "coder/coder"
 # Isolated development environments using Docker
 brew "docker-compose"
 # Convert text between DOS, UNIX, and Mac formats
 brew "dos2unix"
+# Command-line fuzzy finder written in Go
+brew "fzf"
+# Git extension for versioning large files
+brew "git-lfs"
 # GNU implementation of the famous stream editor
 brew "gnu-sed"
 # Open source programming language to build simple/reliable/efficient software
@@ -22,16 +27,24 @@ brew "jmeter"
 brew "jq"
 # Utility for directing compilation
 brew "make"
+# Development kit for the Java programming language
+brew "openjdk"
 # Java-based project management
 brew "maven"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
+# Open-source, cross-platform JavaScript runtime environment
+brew "node"
 # SSL/TLS VPN implementing OSI layer 2 or 3 secure network extension
 brew "openvpn"
 # Tool for managing OCI containers and pods
 brew "podman"
 # Theme for zsh
 brew "powerlevel10k"
+# Search tool like grep and The Silver Searcher
+brew "ripgrep"
+# Proxy server that works as a poor man's VPN
+brew "sshuttle"
 # Organize software neatly under a single directory tree (e.g. /usr/local)
 brew "stow"
 # User interface to the TELNET protocol
@@ -42,14 +55,24 @@ brew "tig"
 brew "tmux"
 # Internet file retriever
 brew "wget"
+# Simulator for HTTP-based APIs
+brew "wiremock-standalone"
 # Command-line XML and HTML beautifier and content extractor
 brew "xq"
 # Terminal emulator for the X Window System
 brew "xterm"
+# Provisions remote development environments via Terraform
+brew "coder/coder/coder"
 # Enable Windows-like alt-tab
 cask "alt-tab"
+# Online diagram software
+cask "drawio"
+# Web browser
+cask "google-chrome"
 # Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2"
+# JetBrains tools manager
+cask "jetbrains-toolbox"
 # Discover, download, and run local LLMs
 cask "lm-studio"
 # Administration and development platform for PostgreSQL
@@ -58,3 +81,7 @@ cask "pgadmin4"
 cask "podman-desktop"
 # Move and resize windows using keyboard shortcuts or snap areas
 cask "rectangle"
+# JDK from the Eclipse Foundation (Adoptium)
+cask "temurin@21"
+# JDK from the Eclipse Foundation (Adoptium)
+cask "temurin@25"

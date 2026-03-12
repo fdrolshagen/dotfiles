@@ -1,0 +1,45 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+if [[ "$(uname -s)" != "Darwin" ]]; then
+  echo "This script only supports macOS."
+  exit 1
+fi
+
+echo "Applying macOS defaults..."
+
+mkdir -p "$HOME/Desktop/Screenshots"
+
+# Keyboard responsiveness.
+defaults write NSGlobalDomain KeyRepeat -int 2
+defaults write NSGlobalDomain InitialKeyRepeat -int 15
+defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
+
+# Finder.
+defaults write com.apple.finder AppleShowAllExtensions -bool true
+defaults write com.apple.finder ShowStatusBar -bool true
+defaults write com.apple.finder ShowPathbar -bool true
+defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+
+# Dock.
+defaults write com.apple.dock autohide -bool false
+defaults write com.apple.dock show-recents -bool false
+defaults write com.apple.dock minimize-to-application -bool true
+defaults write com.apple.dock mineffect -string "scale"
+defaults write com.apple.dock mru-spaces -bool false
+
+# Screenshots.
+defaults write com.apple.screencapture location -string "$HOME/Desktop/Screenshots"
+defaults write com.apple.screencapture type -string "png"
+
+# Trackpad tap-to-click.
+defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
+defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+
+for app in Finder Dock SystemUIServer; do
+  killall "$app" >/dev/null 2>&1 || true
+done
+
+echo "macOS defaults applied. Some settings may require logout/restart."

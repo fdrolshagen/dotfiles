@@ -1,0 +1,7 @@
+# Machine-local runtime state (do not sync across Macs)
+nvim/.config/containers/
+nvim/.config/iterm2/
+nvim/.config/htop/
+htoprc
+lazy-lock.json
+.idea

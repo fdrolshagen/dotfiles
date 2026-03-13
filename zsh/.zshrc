@@ -43,3 +43,4 @@ source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
 export POWERLEVEL9K_INSTANT_PROMPT=quiet
 
 export _JAVA_OPTIONS=-Djavax.net.ssl.trustStoreType=KeychainStore
+export DOCKER_HOST="unix://$(podman machine inspect --format '{{.ConnectionInfo.PodmanSocket.Path}}')"
